@@ -27,6 +27,8 @@ envs:
       value: "/opt/datagrid"
 ports:
     - value: 8080
+    - value: 8787
+      export: false
 cmd:
     - "/opt/datagrid/bin/standalone.sh"
     - "-b"
