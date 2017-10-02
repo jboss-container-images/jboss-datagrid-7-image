@@ -1,0 +1,5 @@
+schema_version: 1
+
+name: datagrid
+execute:
+    - script: install.sh
