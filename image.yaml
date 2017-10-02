@@ -1,8 +1,8 @@
 schema_version: 1
 
-name: "jboss-datagrid-7/datagrid71"
-description: "Red Hat JBoss Data Grid 7.1 container image"
-version: "7.1.0"
+name: "jboss-datagrid-7/datagrid72"
+description: "Red Hat JBoss Data Grid 7.2 container image"
+version: "7.2.0"
 from: "jboss/openjdk18-rhel7:1.0"
 labels:
     - name: "org.jboss.deployments-dir"
@@ -21,9 +21,9 @@ envs:
     - name: "JBOSS_PRODUCT"
       value: "datagrid"
     - name: "JBOSS_DATAGRID_VERSION"
-      value: "7.1.0.GA"
+      value: "7.2.0.GA"
     - name: "PRODUCT_VERSION"
-      value: "7.1.0.GA"
+      value: "7.2.0.GA"
     - name: "JBOSS_HOME"
       value: "/opt/datagrid"
 ports:
@@ -34,9 +34,9 @@ modules:
       install:
           - name: datagrid
 artifacts:
-    - path: jboss-datagrid-7.1.0-server.zip
+    - path: jboss-datagrid-7.2.0-server.zip
       description: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=50851&product=data.grid&version=&downloadType=distributions"
-      md5: a814ca5a3c55b450b1a68c13e28ffece
+      md5: 411376fedbd0df3ed373ae56e0a69c3c
 run:
       user: 185
       cmd:
@@ -46,4 +46,4 @@ run:
 osbs:
       repository:
             name: jboss-datagrid-7-docker
-            branch: jb-datagrid71
+            branch: jb-datagrid72
