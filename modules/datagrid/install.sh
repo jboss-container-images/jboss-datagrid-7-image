@@ -5,8 +5,21 @@ set -e
 SCRIPTS_DIR=/tmp/artifacts
 DISTRIBUTION_ZIP="jboss-datagrid-7.2.0-server.zip"
 DATAGRID_VERSION="7.2.0"
+DEV_SERVER_NAME='infinispan-server-8.5.*-redhat-SNAPSHOT'
+DEV_SERVER_NAME_ZIP="${DEV_SERVER_NAME}-*-bin.zip"
+
+# This executes only for dev builds. Once we start building CRs or Finals
+# we will be using $DISTRIBUTION_ZIP pattern
+if [ -f $SCRIPTS_DIR/$DEV_SERVER_NAME_ZIP ]; then
+  mv $SCRIPTS_DIR/$DEV_SERVER_NAME_ZIP $SCRIPTS_DIR/$DISTRIBUTION_ZIP
+fi
 
 unzip -q $SCRIPTS_DIR/$DISTRIBUTION_ZIP
+
+# This also executes only on dev builds.
+if [ -d $DEV_SERVER_NAME ]; then
+  mv $DEV_SERVER_NAME jboss-datagrid-$DATAGRID_VERSION-server
+fi
 mv jboss-datagrid-$DATAGRID_VERSION-server $JBOSS_HOME
 
 chown -R jboss:root $JBOSS_HOME
