@@ -3,5 +3,4 @@ schema_version: 1
 name: datagrid
 execute:
     - script: install.sh
-    # When releasing patches to subsequent releases, uncomment this.
-    # - script: install_patches.sh
+    - script: install_patches.sh
