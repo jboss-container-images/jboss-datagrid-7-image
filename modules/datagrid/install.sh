@@ -3,8 +3,8 @@
 set -e
 
 SCRIPTS_DIR=/tmp/artifacts
-DISTRIBUTION_ZIP="jboss-datagrid-7.1.1-server.zip"
-DATAGRID_VERSION="7.1.1"
+DISTRIBUTION_ZIP="jboss-datagrid-7.1.0-server.zip"
+DATAGRID_VERSION="7.1.0"
 
 unzip -q $SCRIPTS_DIR/$DISTRIBUTION_ZIP
 mv jboss-datagrid-$DATAGRID_VERSION-server $JBOSS_HOME
