@@ -2,15 +2,15 @@ schema_version: 1
 
 name: "jboss-datagrid-7/datagrid71"
 description: "Red Hat JBoss Data Grid 7.1 container image"
-version: "7.1.1"
+version: "7.1.2"
 from: "jboss/openjdk18-rhel7:1.1"
 labels:
     - name: "org.jboss.product"
       value: "datagrid"
     - name: "org.jboss.product.version"
-      value: "7.1.1.GA"
+      value: "7.1.2.GA"
     - name: "org.jboss.product.datagrid.version"
-      value: "7.1.1.GA"
+      value: "7.1.2.GA"
     - name: "org.jboss.deployments-dir"
       value: "/opt/datagrid/standalone/deployments"
     - name: "com.redhat.deployments-dir"
@@ -27,9 +27,9 @@ envs:
     - name: "JBOSS_PRODUCT"
       value: "datagrid"
     - name: "JBOSS_DATAGRID_VERSION"
-      value: "7.1.1.GA"
+      value: "7.1.2.GA"
     - name: "PRODUCT_VERSION"
-      value: "7.1.1.GA"
+      value: "7.1.2.GA"
     - name: "JBOSS_HOME"
       value: "/opt/datagrid"
 ports:
@@ -42,13 +42,9 @@ modules:
       install:
           - name: datagrid
 artifacts:
-    - path: jboss-datagrid-7.1.1-server.zip
-      description: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=50851&product=data.grid&version=&downloadType=distributions"
-      md5: 1234fbb0461f794b1e4810603e1bcff9
-      # When releasing patches to subsequent releases, uncomment this.
-      # - path: jboss-datagrid-7.1.0-CVE-2017-12629-server-patch.zip
-      #   description: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=50851&product=data.grid&version=&downloadType=distributions"
-      #   md5: 1373127f88ab53e1669a37c6817f7217
+    - path: jboss-datagrid-7.1.2-server.zip
+      description: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=50851&product=data.grid&version=7.1.2&downloadType=distributions"
+      md5: 3805ab1f0cbfdfb0e893ede9a4f1bdae
 run:
       user: 185
       cmd:
