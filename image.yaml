@@ -44,7 +44,7 @@ modules:
 artifacts:
     - path: jboss-datagrid-7.1.2-server.zip
       description: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=50851&product=data.grid&version=7.1.2&downloadType=distributions"
-      md5: 3805ab1f0cbfdfb0e893ede9a4f1bdae
+      md5: f957f85ffd44df28ba8a4f9f21c1bfa3
 run:
       user: 185
       cmd:
