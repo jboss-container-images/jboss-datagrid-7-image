@@ -3,7 +3,7 @@ schema_version: 1
 name: "jboss-datagrid-7/datagrid72"
 description: "Red Hat JBoss Data Grid 7.2 container image"
 version: "7.2.0"
-from: "jboss/openjdk18-rhel7:1.1"
+from: "jboss/openjdk18-rhel7:1.2"
 labels:
     - name: "org.jboss.product"
       value: "datagrid"
@@ -46,9 +46,9 @@ artifacts:
     # - path: jboss-datagrid-7.2.0-server.zip
     #   description: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=50851&product=data.grid&version=&downloadType=distributions"
     #   md5: 411376fedbd0df3ed373ae56e0a69c3c
-    - path: jboss-datagrid-7.2.0.ER2-server.zip
+    - path: jboss-datagrid-7.2.0.ER3-server.zip
       description: "Development artifact. Will be replaced by CR or Final version soon. Commit SHA1: 434f41c"
-      md5: 9d5efad998e7b11f6c7266707bdc65ed
+      md5: de95c0bf255daea28aab344e9c59cbf4
 run:
       user: 185
       cmd:
