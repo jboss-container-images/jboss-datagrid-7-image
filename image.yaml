@@ -5,6 +5,8 @@ description: "Red Hat JBoss Data Grid 7.1 container image"
 version: "7.1.0"
 from: "jboss/openjdk18-rhel7:1.1"
 labels:
+    - name: "com.redhat.component"
+      value: "jboss-datagrid-7-datagrid71-container"
     - name: "org.jboss.product"
       value: "datagrid"
     - name: "org.jboss.product.version"
@@ -56,5 +58,5 @@ run:
           - "0.0.0.0"
 osbs:
       repository:
-            name: jboss-datagrid-7-docker
+            name: containers/jboss-datagrid-7
             branch: jb-datagrid-7.1-rhel-7
