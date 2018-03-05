@@ -3,10 +3,12 @@
 set -e
 
 SCRIPTS_DIR=/tmp/artifacts
-DISTRIBUTION_ZIP="jboss-datagrid-7.1.0-server.zip"
-DATAGRID_VERSION="7.1.0"
+ADDED_DIR=$(dirname $0)/added
+DISTRIBUTION_ZIP="jboss-datagrid-7.1.2-server.zip"
+DATAGRID_VERSION="7.1.2"
 
 unzip -q $SCRIPTS_DIR/$DISTRIBUTION_ZIP
+cp $ADDED_DIR/logging.properties jboss-datagrid-$DATAGRID_VERSION-server/standalone/configuration
 mv jboss-datagrid-$DATAGRID_VERSION-server $JBOSS_HOME
 
 chown -R jboss:root $JBOSS_HOME
