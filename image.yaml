@@ -48,9 +48,9 @@ artifacts:
     # - path: jboss-datagrid-7.2.0-server.zip
     #   description: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=50851&product=data.grid&version=&downloadType=distributions"
     #   md5: 411376fedbd0df3ed373ae56e0a69c3c
-    - path: jboss-datagrid-7.2.0.ER3-server.zip
+    - path: jboss-datagrid-7.2.0.ER4-server.zip
       description: "Development artifact. Will be replaced by CR or Final version soon. Commit SHA1: 434f41c"
-      md5: de95c0bf255daea28aab344e9c59cbf4
+      md5: 8b62818d3f322ca7428e9627fbf6a017
 run:
       user: 185
       cmd:
