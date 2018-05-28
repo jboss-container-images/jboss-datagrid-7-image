@@ -1,0 +1,1 @@
+from: "docker-registry.engineering.redhat.com/jboss/openjdk18-rhel7:1.1"
