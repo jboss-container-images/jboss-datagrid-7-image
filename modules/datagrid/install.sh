@@ -14,6 +14,8 @@ mv jboss-datagrid-$DATAGRID_VERSION-server $JBOSS_HOME
 chown -R jboss:root $JBOSS_HOME
 chmod -R g+rwX $JBOSS_HOME
 
+# CLOUD-2424 remove redudant .exe files
+rm -rf $JBOSS_HOME/docs/contrib/scripts/service
 # Enhance standalone.sh to make remote JAVA debugging possible by specifying
 # DEBUG=true environment variable
 sed -i 's|DEBUG_MODE=false|DEBUG_MODE="${DEBUG:-false}"|' $JBOSS_HOME/bin/standalone.sh
