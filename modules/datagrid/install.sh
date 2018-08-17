@@ -3,11 +3,11 @@
 set -e
 
 SCRIPTS_DIR=/tmp/artifacts
-DISTRIBUTION_ZIP="jboss-datagrid-7.2.0-server.zip"
-DATAGRID_VERSION="7.2.0"
+DISTRIBUTION_ZIP="jboss-datagrid-7.2.1-server.zip"
+DATAGRID_VERSION="7.2.1"
 DEV_SERVER_NAME='infinispan-server-8.5.*-redhat-SNAPSHOT'
 DEV_SERVER_NAME_ZIP="${DEV_SERVER_NAME}-*-bin.zip"
-INTERMEDIATE_SERVER_NAME_ZIP='jboss-datagrid-7.2.0.*-server.zip'
+INTERMEDIATE_SERVER_NAME_ZIP='jboss-datagrid-7.2.1.*-server.zip'
 
 # This executes only for dev builds. Once we start building CRs or Finals
 # we will be using $DISTRIBUTION_ZIP pattern
@@ -31,6 +31,8 @@ mv jboss-datagrid-$DATAGRID_VERSION-server $JBOSS_HOME
 chown -R jboss:root $JBOSS_HOME
 chmod -R g+rwX $JBOSS_HOME
 
+# CLOUD-2424 remove redudant .exe files
+rm -rf $JBOSS_HOME/docs/contrib/scripts/service
 # Enhance standalone.sh to make remote JAVA debugging possible by specifying
 # DEBUG=true environment variable
 sed -i 's|DEBUG_MODE=false|DEBUG_MODE="${DEBUG:-false}"|' $JBOSS_HOME/bin/standalone.sh
