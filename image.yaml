@@ -44,9 +44,12 @@ modules:
       install:
           - name: datagrid
 artifacts:
-    - path: jboss-datagrid-7.2.1-server.zip
-      description: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=50851&product=data.grid&version=&downloadType=distributions"
-      md5: 685e39e7c20d85121014d295057d44f8
+    - path: jboss-datagrid-7.2.0-server.zip
+      description: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=58411&product=data.grid&version=7.2&downloadType=distributions"
+      md5: 797b98378c9481151298dd5498c6d55a
+    - path: jboss-datagrid-7.2.1-server-patch.zip
+      description: "Artifact is available on Customer Portal: https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=58801&product=data.grid&version=7.2&downloadType=securityPatches"
+      md5: 5700e8e13acce4e9a79c1d14b8ca4d7b
 run:
       user: 185
       cmd:
