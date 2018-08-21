@@ -6,6 +6,7 @@ ARTIFACTS_DIR=/tmp/artifacts
 # Add patches to the array below and they will be applied in order
 PATCHES=(
   "jboss-datagrid-7.2.1-server-patch.zip"
+  "jboss-datagrid-7.2.2-server-patch.zip"
 )
 
 # Usage: apply_patches <patches array> <artifacts dir>
