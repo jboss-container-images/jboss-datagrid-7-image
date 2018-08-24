@@ -7,7 +7,7 @@ DISTRIBUTION_ZIP="jboss-datagrid-7.2.0-server.zip"
 DATAGRID_VERSION="7.2.0"
 DEV_SERVER_NAME='infinispan-server-8.5.*-redhat-SNAPSHOT'
 DEV_SERVER_NAME_ZIP="${DEV_SERVER_NAME}-*-bin.zip"
-INTERMEDIATE_SERVER_NAME_ZIP='jboss-datagrid-7.2.1.*-server.zip'
+INTERMEDIATE_SERVER_NAME_ZIP='jboss-datagrid-7.2.0.*-server.zip'
 
 # This executes only for dev builds. Once we start building CRs or Finals
 # we will be using $DISTRIBUTION_ZIP pattern
