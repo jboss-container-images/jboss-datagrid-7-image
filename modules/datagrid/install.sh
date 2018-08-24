@@ -2,25 +2,25 @@
 
 set -e
 
-SCRIPTS_DIR=/tmp/artifacts
-DISTRIBUTION_ZIP="jboss-datagrid-7.2.1-server.zip"
-DATAGRID_VERSION="7.2.1"
+ARTIFACTS_DIR=/tmp/artifacts
+DISTRIBUTION_ZIP="jboss-datagrid-7.2.0-server.zip"
+DATAGRID_VERSION="7.2.0"
 DEV_SERVER_NAME='infinispan-server-8.5.*-redhat-SNAPSHOT'
 DEV_SERVER_NAME_ZIP="${DEV_SERVER_NAME}-*-bin.zip"
 INTERMEDIATE_SERVER_NAME_ZIP='jboss-datagrid-7.2.1.*-server.zip'
 
 # This executes only for dev builds. Once we start building CRs or Finals
 # we will be using $DISTRIBUTION_ZIP pattern
-if [ -f $SCRIPTS_DIR/$DEV_SERVER_NAME_ZIP ]; then
-  mv $SCRIPTS_DIR/$DEV_SERVER_NAME_ZIP $SCRIPTS_DIR/$DISTRIBUTION_ZIP
+if [ -f $ARTIFACTS_DIR/$DEV_SERVER_NAME_ZIP ]; then
+  mv $ARTIFACTS_DIR/$DEV_SERVER_NAME_ZIP $ARTIFACTS_DIR/$DISTRIBUTION_ZIP
 fi
 
 # This executes only for intermediate builds like ERs
-if [ -f $SCRIPTS_DIR/$INTERMEDIATE_SERVER_NAME_ZIP ]; then
-  mv $SCRIPTS_DIR/$INTERMEDIATE_SERVER_NAME_ZIP $SCRIPTS_DIR/$DISTRIBUTION_ZIP
+if [ -f $ARTIFACTS_DIR/$INTERMEDIATE_SERVER_NAME_ZIP ]; then
+  mv $ARTIFACTS_DIR/$INTERMEDIATE_SERVER_NAME_ZIP $ARTIFACTS_DIR/$DISTRIBUTION_ZIP
 fi
 
-unzip -q $SCRIPTS_DIR/$DISTRIBUTION_ZIP
+unzip -q $ARTIFACTS_DIR/$DISTRIBUTION_ZIP
 
 # This also executes only on dev builds.
 if [ -d $DEV_SERVER_NAME ]; then
@@ -33,6 +33,7 @@ chmod -R g+rwX $JBOSS_HOME
 
 # CLOUD-2424 remove redudant .exe files
 rm -rf $JBOSS_HOME/docs/contrib/scripts/service
+
 # Enhance standalone.sh to make remote JAVA debugging possible by specifying
 # DEBUG=true environment variable
 sed -i 's|DEBUG_MODE=false|DEBUG_MODE="${DEBUG:-false}"|' $JBOSS_HOME/bin/standalone.sh
